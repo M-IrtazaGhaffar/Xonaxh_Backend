@@ -1,4 +1,4 @@
-const StockModel = require("../Model/Stock.model.js");
+const StockModel = require("../Model/stock.model.js");
 const appealModel = require("../Model/appeal.model.js");
 const contactModel = require("../Model/contact.model.js");
 const notificationsModel = require("../Model/notifications.model.js");
