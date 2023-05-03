@@ -1,10 +1,10 @@
-const StockModel = require("../Model/Stock.model");
-const appealModel = require("../Model/appeal.model");
-const contactModel = require("../Model/contact.model");
-const notificationsModel = require("../Model/notifications.model");
-const orderModel = require("../Model/order.model");
-const reportModel = require("../Model/report.model");
-const userModel = require("../Model/user.model");
+const StockModel = require("../Model/Stock.model.js");
+const appealModel = require("../Model/appeal.model.js");
+const contactModel = require("../Model/contact.model.js");
+const notificationsModel = require("../Model/notifications.model.js");
+const orderModel = require("../Model/order.model.js");
+const reportModel = require("../Model/report.model.js");
+const userModel = require("../Model/user.model.js");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
