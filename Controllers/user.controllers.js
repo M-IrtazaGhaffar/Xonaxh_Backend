@@ -188,7 +188,7 @@ const login = async (req, res) => {
         res.status(403).json("Wrong password");
       }
     } else {
-      res.status(200).json("User doesn't exist");
+      res.status(403).json("User doesn't exist");
     }
   } catch (error) {
     res.status(500).json("Some error occured!");
