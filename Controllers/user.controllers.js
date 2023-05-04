@@ -183,7 +183,7 @@ const login = async (req, res) => {
           "XonaxhPakistanByM-IrtazaGhaffar",
           { expiresIn: 60 * 60 * 24 }
         );
-        res.status(200).json({ user: findUser[0], token: JWTtoken, login: true });
+        res.status(200).json({ user: findUser[0], token: JWTtoken, login: true }); 
       } else {
         res.status(200).json({ msg: "Wrong password", login: false });
       }
