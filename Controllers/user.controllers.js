@@ -185,10 +185,10 @@ const login = async (req, res) => {
         );
         res.status(200).json({ user: findUser[0], token: JWTtoken });
       } else {
-        res.status(403).json("Wrong password");
+        res.status(401).json("Wrong password");
       }
     } else {
-      res.status(403).json("User doesn't exist");
+      res.status(401).json("User doesn't exist");
     }
   } catch (error) {
     res.status(500).json("Some error occured!");
