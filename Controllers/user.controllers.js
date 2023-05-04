@@ -185,7 +185,7 @@ const login = async (req, res) => {
         );
         res.status(200).json({ user: findUser[0], token: JWTtoken });
       } else {
-        res.status(200).json("Wrong password");
+        res.status(403).json("Wrong password");
       }
     } else {
       res.status(200).json("User doesn't exist");
