@@ -183,12 +183,12 @@ const login = async (req, res) => {
           "XonaxhPakistanByM-IrtazaGhaffar",
           { expiresIn: 60 * 60 * 24 }
         );
-        res.status(200).json({ user: findUser[0], token: JWTtoken });
+        res.status(200).json({ user: findUser[0], token: JWTtoken, login: true });
       } else {
-        res.status(401).json("Wrong password");
+        res.status(200).json({ msg: "Wrong password", login: false });
       }
     } else {
-      res.status(401).json("User doesn't exist");
+      res.status(200).json({ msg: "User doesn't exist", login: false });
     }
   } catch (error) {
     res.status(500).json("Some error occured!");
