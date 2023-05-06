@@ -170,7 +170,7 @@ const login = async (req, res) => {
     const { email, password } = req.body;
     const findUser = await userModel.find({
       email: email,
-    }, { "email": 0, "fname": 0, "lname": 0, "father": 0, "age": 0, "gender": 0, "country": 0, "state": 0, "city": 0, "mobile" 0, "date": 0 });
+    }, { "email": 0, "fname": 0, "lname": 0, "father": 0, "age": 0, "gender": 0, "country": 0, "state": 0, "city": 0, "mobile": 0, "date": 0 });
     if (findUser.length !== 0) {
       const result = await bcrypt
         .compare(password, findUser[0].password)
