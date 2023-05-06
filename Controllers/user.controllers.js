@@ -205,7 +205,7 @@ const changeNumber = async (req, res) => {
       },
     ]);
 
-    res.status(500).json("Request sent");
+    res.status(200).json("Request sent");
   } catch (error) {
     console.log(error);
     res.status(500).json("Some error occured!");
