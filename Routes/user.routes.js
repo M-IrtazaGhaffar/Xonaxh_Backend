@@ -14,6 +14,7 @@ const {
   paymentsDone,
   paymentsPending,
   stock,
+  stockDetail
 } = require("../Controllers/user.controllers");
 const { verifyToken } = require("../Middlewares/auth.middleware");
 const routerUser = express.Router();
@@ -24,6 +25,7 @@ routerUser
   .post("/reportForm", verifyToken, reportform)
   .post("/userInfo", verifyToken, userinfo)
   .post("/stock", verifyToken, stock)
+  .post("/stockDetail", verifyToken, stockDetail)
   .post("/createOrder", verifyToken, createOrder)
   .post("/allOrders", verifyToken, allOrders)
   .post("/pendingOrders", verifyToken, pendingOrders)
