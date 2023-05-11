@@ -262,11 +262,25 @@ const paymentsAll = async (req, res) => {
 
 const stock = async (req, res) => {
   try {
-    const stock = await StockModel.find().sort({ date: -1 });
+    const stock = await StockModel.find({}, { desc: 0, name: 0, quantity: 0, price: 0, marketerpayment: 0, }).sort({ date: -1 });
     res.status(200).json(stock);
   } catch (error) {
     res.status(500).json("Some error occured!");
   }
+};
+
+const stockDetail = async (req, res) => {
+  try {
+    const { id } = req.body;
+    const detail = await StockModel.find({
+      _id: id,
+    });
+    if (!detail) {
+      res.status(500).json("Stock not founnd!");
+    } else {
+      res.status(200).json(detail[0]);
+    }
+  } catch (error) {}
 };
 
 module.exports = {
@@ -284,4 +298,5 @@ module.exports = {
   paymentsDone,
   paymentsPending,
   stock,
+  stockDetail
 };
