@@ -262,7 +262,7 @@ const paymentsAll = async (req, res) => {
 
 const stock = async (req, res) => {
   try {
-    const stock = await StockModel.find({}, { desc: 0, name: 0, quantity: 0, price: 0, marketerpayment: 0, }).sort({ date: -1 });
+    const stock = await StockModel.find({}, { desc: 0, quantity: 0, price: 0, marketerpayment: 0, }).sort({ date: -1 });
     res.status(200).json(stock);
   } catch (error) {
     res.status(500).json("Some error occured!");
