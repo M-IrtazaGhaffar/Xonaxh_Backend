@@ -151,7 +151,7 @@ const deliveredOrders = async (req, res) => {
     const orders = await orderModel
       .find({
         marketerid: id,
-        deliveryStatus: false,
+        deliveryStatus: true,
       })
       .sort({ dateOrdered: -1 })
       .limit(100);
