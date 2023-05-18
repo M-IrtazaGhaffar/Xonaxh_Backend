@@ -44,6 +44,11 @@ var userSchema = new mongoose.Schema({
     required: true,
     index: true,
   },
+  desc: {
+    type: String,
+    required: true,
+    index: true,
+  },
   address: {
     type: String,
     required: true,
