@@ -82,7 +82,8 @@ const createOrder = async (req, res) => {
       daman,
       colloar,
       armhole,
-      chest
+      chest,
+      desc
     } = req.body;
     await orderModel.insertMany([
       {
@@ -101,7 +102,8 @@ const createOrder = async (req, res) => {
         daman: daman,
         colloar: colloar,
         armhole: armhole,
-        chest: chest
+        chest: chest,
+        desc: desc
       },
     ]);
     res.status(200).json("Data submitted!");
