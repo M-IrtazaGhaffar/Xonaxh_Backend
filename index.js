@@ -24,6 +24,6 @@ connection();
 
 // Routes
 app.use("/user/", routerUser);
-app.use("/admin", routerAdmin);
+app.use("/admin/", routerAdmin);
 
 app.listen(port, () => console.log(`App listening on port ${port}!`));
