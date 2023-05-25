@@ -278,12 +278,23 @@ const stockDetail = async (req, res) => {
       _id: id,
     });
     if (!detail) {
-      res.status(500).json("Stock not founnd!");
+      res.status(500).json("Stock not found!");
     } else {
       res.status(200).json(detail[0]);
     }
   } catch (error) {}
 };
+
+// const makeReturn = async (req, res) => {
+//   const { id, marketerid } = req.body;
+//     const findOrder = await StockModel.find({
+//       _id: id,
+//       marketerid: marketerid
+//     });
+  
+//   if (findOrder.length === 0)
+//     res.json({})
+// }
 
 module.exports = {
   login,
