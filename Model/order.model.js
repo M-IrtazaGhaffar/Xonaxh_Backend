@@ -20,13 +20,13 @@ var userSchema = new mongoose.Schema({
     index: true,
   },
   dateConfirmationOrder: {
-    type: String,
-    default: "Not confirmed yet",
+    type: Date,
+    default: null,
     index: true,
   },
   dateDelivered: {
-    type: String,
-    default: "Not delivered yet",
+    type: Date,
+    default: null,
     index: true,
   },
   clothID: {
@@ -121,6 +121,49 @@ var userSchema = new mongoose.Schema({
     required: true,
     index: true,
   },
+  returnDate: {
+    type: Date,
+    default: null,
+    required: true,
+    index: true,
+  },
+  // When will be order delivered to us from customer
+  returnDeliveredDate: {
+    type: Date,
+    default: null,
+    required: true,
+    index: true,
+  },
+  returnStatus: {
+    type: Boolean,
+    default: false,
+    required: true,
+    index: true,
+  },
+  returnDeliveredStatus: {
+    type: Boolean,
+    default: false,
+    required: true,
+    index: true,
+  },
+  returnSentBackStatus: {
+    type: Boolean,
+    default: false,
+    required: true,
+    index: true,
+  },
+  // When will be order sent back to customer from us
+  returnSentBackDate: {
+    type: Date,
+    default: null,
+    required: true,
+    index: true,
+  },
+  returnDesc: {
+    type: String,
+    required: true,
+    index: true,
+  }
 });
 
 //Export the model
