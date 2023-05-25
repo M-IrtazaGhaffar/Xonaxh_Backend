@@ -124,14 +124,12 @@ var userSchema = new mongoose.Schema({
   returnDate: {
     type: Date,
     default: null,
-    required: true,
     index: true,
   },
   // When will be order delivered to us from customer
   returnDeliveredDate: {
     type: Date,
     default: null,
-    required: true,
     index: true,
   },
   returnStatus: {
@@ -156,12 +154,11 @@ var userSchema = new mongoose.Schema({
   returnSentBackDate: {
     type: Date,
     default: null,
-    required: true,
     index: true,
   },
   returnDesc: {
     type: String,
-    required: true,
+    default: "",
     index: true,
   }
 });
