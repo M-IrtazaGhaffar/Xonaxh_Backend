@@ -14,7 +14,9 @@ const {
   paymentsDone,
   paymentsPending,
   stock,
-  stockDetail
+  stockDetail,
+  makeReturn,
+  checkReturn
 } = require("../Controllers/user.controllers");
 const { verifyToken } = require("../Middlewares/auth.middleware");
 const routerUser = express.Router();
