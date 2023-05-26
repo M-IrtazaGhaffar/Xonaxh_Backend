@@ -287,16 +287,53 @@ const stockDetail = async (req, res) => {
   }
 };
 
-// const makeReturn = async (req, res) => {
-//   const { id, marketerid } = req.body;
-//     const findOrder = await StockModel.find({
-//       _id: id,
-//       marketerid: marketerid
-//     });
-  
-//   if (findOrder.length === 0)
-//     res.json({})
-// }
+const makeReturn = async (req, res) => {
+  try {
+    const { id } = req.body;
+    const findOrder = await orderModel.find({
+      _id: id,
+    });
+    if (findOrder.length !== 0) {
+      if (findOrder[0].returnStatus === true) {
+        res.status(200).json("Already Returned!");
+      } else {
+        const d = new Date();
+        const result = await orderModel
+          .updateOne(
+            {
+              _id: id,
+            },
+            {
+              returnStatus: true,
+              returnDate: d,
+            }
+          )
+          .maxTimeMS(10000);
+        res.status(200).json("Returned made successful!");
+      }
+    } else {
+      res.status(200).json("No record was found!");
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).json("Some error occured!");
+  }
+};
+
+const checkReturn = async (req, res) => {
+  try {
+    const { id } = req.body;
+    const findOrder = await orderModel
+      .find({
+        _id: id,
+      })
+      .maxTimeMS(10000);
+    res.status(200).json(findOrder);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json("Some error occured!");
+  }
+};
 
 module.exports = {
   login,
@@ -313,5 +350,7 @@ module.exports = {
   paymentsDone,
   paymentsPending,
   stock,
-  stockDetail
+  stockDetail,
+  checkReturn,
+  makeReturn
 };
