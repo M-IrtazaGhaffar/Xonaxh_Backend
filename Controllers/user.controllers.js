@@ -289,7 +289,7 @@ const stockDetail = async (req, res) => {
 
 const makeReturn = async (req, res) => {
   try {
-    const { id } = req.body;
+    const { id, desc } = req.body;
     const findOrder = await orderModel.find({
       _id: id,
     });
@@ -306,6 +306,7 @@ const makeReturn = async (req, res) => {
             {
               returnStatus: true,
               returnDate: d,
+              returnDesc: desc
             }
           )
           .maxTimeMS(10000);
