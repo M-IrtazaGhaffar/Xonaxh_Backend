@@ -12,7 +12,7 @@ const userinfo = async (req, res) => {
   try {
     const { id } = req.body;
     const user = await userModel.find({
-      id: id,
+      _id: id,
     });
     res.status(200).json(user);
   } catch (error) {
