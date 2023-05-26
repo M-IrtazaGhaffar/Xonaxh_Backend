@@ -34,6 +34,8 @@ routerUser
   .post("/paymentsAll", verifyToken, paymentsAll)
   .post("/paymentsDone", verifyToken, paymentsDone)
   .post("/paymentsPending", verifyToken, paymentsPending)
+  .post("/checkReturn", verifyToken, checkReturn)
+  .post("/makeReturn", verifyToken, makeReturn)
   .post("/login", login);
 module.exports = {
   routerUser,
