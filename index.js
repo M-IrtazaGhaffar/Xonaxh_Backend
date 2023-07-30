@@ -30,7 +30,7 @@ app.use("/admin/", routerAdmin);
 app.get('/ip', async (req, res) => {
   const ipAddress = req.ip;
   const publicIP = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-  res.send(`IP: ${ipAddress} --- PublicIP: ${publicIP} --- Protocol: ${req.protocol} --- Secure: ${req.secure} --- Cache: ${req.fresh} --- Opposite Cache: ${req.stale} --- jQuery Request: ${req.xhr} --- Request Headers: ${req.headers} --- Hostname: ${req.hostname} --- Http Version: ${re.httpVersion} --- Request MetaData Trailers: ${req.trailers} `);
+  res.send(`IP: ${ipAddress} --- PublicIP: ${publicIP} --- Protocol: ${req.protocol} --- Secure: ${req.secure} --- Cache: ${req.fresh} --- Opposite Cache: ${req.stale} --- jQuery Request: ${req.xhr} --- Request Headers: ${req.headers} --- Hostname: ${req.hostname} --- Http Version: ${req.httpVersion} --- Request MetaData Trailers: ${req.trailers} `);
 })
 
 app.listen(port, () => console.log(`App listening on port ${port}!`));
