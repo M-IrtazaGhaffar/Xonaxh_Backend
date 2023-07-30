@@ -29,7 +29,8 @@ app.use("/admin/", routerAdmin);
 // IP Address
 app.get('/ip', async (req, res) => {
   const ipAddress = req.ip;
-  res.send(ipAddress);
+  const publicIP = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  res.send(`IP: ${ipAddress} --- PublicIP: ${publicIP}`);
 })
 
 app.listen(port, () => console.log(`App listening on port ${port}!`));
