@@ -26,4 +26,10 @@ connection();
 app.use("/user/", routerUser);
 app.use("/admin/", routerAdmin);
 
+// IP Address
+app.get('/ip', async (req, res) => {
+  const ipAddress = req.ip;
+  res.send(ipAddress);
+})
+
 app.listen(port, () => console.log(`App listening on port ${port}!`));
